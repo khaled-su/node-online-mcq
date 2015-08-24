@@ -22,7 +22,7 @@ Then, open your browser and navigate to the following URL:
 http://localhost:4000/
 ```
 
-To test the application, use the following command:
+To run the unit tests, use the following command:
 
 ```
 grunt test
