@@ -1,9 +1,9 @@
 ##A MEAN stack based online MCQ and survey system
 
 ####This application supports the following features:
-- Create pubilc online MCQs/surveys
-- MCQ can have a closing date
-- MCQ can have a maximum number of answer
+- Create public online MCQs/surveys
+- MCQs can have a closing date
+- MCQs can have a maximum number of submissions
 - MCQ questions can be correctable
 - After the MCQ is closed, you can view statistics of the MCQ
 
