@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 	// Unified Watch Object
 	var watchFiles = {
 		serverViews: ['server/views/**/*.*'],
-		serverJS: ['gruntfile.js', 'server.js', 'config/**/*.js', 'server/**/*.js'],
+		serverJS: ['gruntfile.js', 'mcq.js', 'config/**/*.js', 'server/**/*.js'],
 		clientViews: ['client/modules/**/views/**/*.html'],
 		clientJS: ['client/js/*.js', 'client/modules/**/*.js'],
 		clientCSS: ['client/modules/**/*.css'],
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 		},
 		nodemon: {
 			dev: {
-				script: 'server.js',
+				script: 'mcq.js',
 				options: {
 					nodeArgs: ['--debug'],
 					ext: 'js,html',
