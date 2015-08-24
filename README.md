@@ -9,7 +9,7 @@ Click [here](http://5.9.153.140:4000/) to view a running demo of the application
 - MCQ questions can be correctable
 - After the MCQ is closed, you can view statistics of the MCQ
 
-To run the application, use the following commands:
+To run the application on your machine, use the following commands:
 
 ```
 npm install
