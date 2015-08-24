@@ -1,0 +1,54 @@
+<section data-ng-controller="AnswerQuestionnaireController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="questionnaire.name"></h1>
+		<small>
+			<em class="text-muted">
+				Posted on
+				<span data-ng-bind="questionnaire.created | date:'mediumDate'"></span>
+			</em>
+		</small>
+	</div>
+
+	<form name="submitForm" data-novalidate data-ng-submit="submitForm.$valid && answerQuestionnaire()">
+		<h3 style="margin-top: 20px">
+			Please answer the following questions:
+		</h3>
+
+		<div ng-repeat="question in questionnaire.questions" style="margin-bottom: 10px;border-style: solid; border-width: 1px; border-color: #e5e5e5; border-radius: 5px">
+
+			<h3 style="margin: 8px 0 0 10px">
+				question {{$index + 1}}:
+			</h3>
+
+			<p style="margin: 8px 0 10px 10px">
+				{{question.text}}
+			</p>
+			<small style="margin-left: 10px" ng-show="question.allowMultiple">
+				<em class="text-muted">
+					* This question can have multiple answers
+				</em>
+			</small>
+			<div style="width: 70%;margin: 10px" ng-repeat="questionChoice in question.questionChoices">
+				<table style="margin-left: 15px; width: 80%">
+					<tr>
+						<td style="text-align: center;width: 5%">
+							<input type="checkbox" ng-model="questionChoice.isChecked" ng-change="choiceSelected(question, questionChoice)">
+						</td>
+						<td style="width: 95%">
+							<span class="qChoiceText" ng-click="questionChoice.isChecked = !questionChoice.isChecked">
+								{{questionChoice.text}}
+							</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<hr />
+
+		<div style="clear: both;float: left;padding-top: 13px; margin-bottom: 100px">
+			<button id="submitAnswers" data-loading-text="Submitting..." class="btn btn-lg btn-primary btn-block">
+				Submit
+			</button>
+		</div>
+	</form>
+</section>

@@ -1,0 +1,40 @@
+<section data-ng-controller="ListQuestionnairesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>MCQs</h1>
+    </div>
+    <a href="/#!/createQuestionnaire" class="btn btn-primary btn-lg">Create MCQ</a>
+    <br /><br />
+
+    <tabset>
+        <tab heading="Open" active="isOpenTabActive" ng-click="setStatus('open')"></tab>
+        <tab heading="Closed" active="isClosedTabActive" ng-click="setStatus('closed')"></tab>
+    </tabset>
+
+    <div style="margin-top: 30px" class="list-group">
+        <a data-ng-repeat="questionnaire in questionnaires" data-ng-href="{{questionnaire.url}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="questionnaire.created | date:'medium'"></span>
+                <span class="pull-right">
+                    Answered: {{questionnaire.answerCount}}<span ng-show="questionnaire.maxAnswerCount!=-1">/{{questionnaire.maxAnswerCount}}</span>
+                     -
+                    Closing date: <span data-ng-bind="questionnaire.closingDate | date:'MMM dd yyyy'"></span>
+                </span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="questionnaire.name"></h4>
+        </a>
+    </div>
+    <div ng-show="questionnaires.length > 0">
+        <pagination total-items="totalItems"
+                    ng-model="currentPage"
+                    max-size="10"
+                    items-per-page="10"
+                    class="pagination-sm"
+                    boundary-links="true"
+                    rotate="false">
+        </pagination>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="questionnaires.length || status==='closed'">
+    	No MCQs yet, why don't you <a href="/#!/createQuestionnaire">create one</a>?
+    </div>
+</section>
