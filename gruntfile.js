@@ -181,5 +181,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', ['loadConfig', 'ngAnnotate', 'uglify', 'cssmin']);
 
 	// Test task.
-	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit', 'mochaProtractor']);
+	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
 };
