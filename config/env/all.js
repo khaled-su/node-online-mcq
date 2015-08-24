@@ -2,7 +2,7 @@
 
 module.exports = {
 	app: {
-		title: 'mcq-app',
+		title: 'Online MCQ & Survey System',
 		description: 'MCQ',
 		keywords: 'MCQ'
 	},
