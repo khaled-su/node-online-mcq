@@ -1,5 +1,7 @@
 ##A MEAN stack based online MCQ and survey system
 
+Click [here](http://5.9.153.140:4000/) to view a running demo of the application.
+
 ####This application supports the following features:
 - Create public online MCQs/surveys
 - MCQs can have a closing date
